@@ -1,0 +1,55 @@
+<div class="container-fluid mt-5">
+        <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4 m-auto">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">S'enregistrer</h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form" [formGroup]="userForm" (submit)="onSubmitForm()">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                			<input type="text" formControlName="firstname" id="firstname" class="form-control input-sm" placeholder="Prénom">
+									</div>
+									<div *ngIf="userForm.errors">
+										Prénom requis.
+									</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" formControlName="lastname" id="lastname" class="form-control input-sm" placeholder="Nom">
+			    					</div>
+			    				</div>
+			    			</div>
+
+			    			<div class="form-group">
+			    				<input type="email" formControlName="email" id="email" class="form-control input-sm" placeholder="Email ">
+			    			</div>
+
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" id="password" class="form-control input-sm" formControlName="password" placeholder="Confirmer le mdp">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" formControlName="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirmer le mdp" (blur)="onBlurPass()">
+			    					</div>
+								</div>
+								<div class="col-xs-6 col-sm-6 col-md-6" *ngIf="pass===true">
+									<div class="form-group">
+										Le mot de passe n'est pas identique
+									</div>
+								</div>
+			    			</div>
+			    			
+			    			<button type="submit" class="btn btn-success btn-block" [disabled]="userForm.invalid" >Valider</button>
+			    		
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
