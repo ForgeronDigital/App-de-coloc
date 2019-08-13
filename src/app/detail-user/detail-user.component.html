@@ -1,17 +1,17 @@
 <div class="row">
         <div class="col-12 text-center my-3">
-            <div class="col-6 m-auto">
-                <form [formGroup]="userGroup" (ngSubmit)="onSubmitFormUser()">
+            <div class="col-sm-12 col-md-8 m-auto">
+                <!-- <form [formGroup]="userGroup" (ngSubmit)="onSubmitFormUser()">
                     <div class="form-group d-flex justify-content-between">
                             <div>
                                 <input type="text" class="form-control" formControlName="user" placeholder="Colocataire">
                             </div>
                             <button type="submit" class="btn btn-success" [disabled]="userGroup.invalid">Ajout</button>
                         </div>
-                </form>
+                </form> -->
                 <form [formGroup]="itemForm" (ngSubmit)="onSubmitForm()">
                     <div class="form-group d-flex justify-content-between">
-                        <div>
+                        <div >
                             <select class="form-control" formControlName="buyer">
                                 <option value="">Selectionner un colocataire</option>
                                 <option *ngFor="let user of users" value="{{user.name}}">{{user.name}}</option>
@@ -37,7 +37,7 @@
         <div class="col-12">
             <ul class="list-group">
                 <div *ngFor="let item of userItems, let i= index">
-                    <div class="col-6 m-auto d-flex justify-content-between" *ngIf="user.name===item.buyer">
+                    <div class="col-sm-12 col-md-8 m-auto d-flex justify-content-between" *ngIf="user.name===item.buyer">
                             <li class="list-group-item">{{item.name}}: {{item.price}} € </li>
                             <button class="btn btn-danger" (click)="onDeleteItem(i)">Retirer</button>
                     </div>

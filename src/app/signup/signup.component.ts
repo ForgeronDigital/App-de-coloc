@@ -32,9 +32,7 @@ export class SignupComponent implements OnInit {
   onSubmitForm(){
     const formValue = this.userForm.value;
     const newUser = new User(
-      formValue['firstname'],
-      formValue['lastname'],
-      formValue['email'],
+      formValue['firstname'] +" "+ formValue['lastname']
     );
     this.userService.addUser(newUser);
     this.route.navigate(['accueil']);

@@ -11,7 +11,7 @@ export class UserService {
     this.getUser();
   }
 
-  private users:User[]= [];
+  private users:User[]=[];
   userSubject = new Subject<User[]>();
   total:number=0;
   retour='';
@@ -21,8 +21,23 @@ export class UserService {
     this.userSubject.next(this.users.slice());
   }
 
-  addUser(user:User){
-    this.users.push(user);
+  addUser(newUser:User){
+
+    let verif;
+    console.log(this.users);
+    if(this.users.length>0){
+      verif = this.users.find(
+        (user:User)=>{
+            return newUser.name===user.name;
+        });
+    }else{verif=undefined;}
+
+    console.log(verif);
+
+    if(verif===undefined){
+      this.users.push(newUser);
+    }else if(verif.name!=newUser.name){
+      this.users.push(newUser);}
     firebase.database().ref('/users').set(this.users);
     this.emitUsers();
   }
@@ -37,7 +52,6 @@ export class UserService {
   sumTotal(){
     this.users.forEach(user => {
       this.total += user.total;
-      console.log(this.total);
     });
   }
 

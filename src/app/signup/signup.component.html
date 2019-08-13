@@ -5,7 +5,7 @@
         		<div class="panel-heading">
 			    		<h3 class="panel-title">S'enregistrer</h3>
 			 			</div>
-			 			<div class="panel-body">
+			 			<div class="panel-body mt-3">
 			    		<form role="form" [formGroup]="userForm" (submit)="onSubmitForm()">
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
@@ -30,12 +30,12 @@
 			    			<div class="row">
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="password" id="password" class="form-control input-sm" formControlName="password" placeholder="Confirmer le mdp">
+			    						<input type="password" id="password" class="form-control input-sm" formControlName="password" placeholder="Mot de passe">
 			    					</div>
 			    				</div>
 			    				<div class="col-xs-6 col-sm-6 col-md-6">
 			    					<div class="form-group">
-			    						<input type="password" formControlName="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirmer le mdp" (blur)="onBlurPass()">
+			    						<input type="password" formControlName="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirmer" (blur)="onBlurPass()">
 			    					</div>
 								</div>
 								<div class="col-xs-6 col-sm-6 col-md-6" *ngIf="pass===true">

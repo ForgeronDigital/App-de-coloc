@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid mt-3">
     <div class="d-flex justify-content-between">
-        <button class="btn btn-dark" routerLink="/user" *ngFor="let user of users">
+        <button class="btn btn-dark rounded" routerLink="/user" *ngFor="let user of users">
             <div>
                 {{user.name}}
             </div>
@@ -9,13 +9,13 @@
             </div>
         </button>
     </div>
-    <div class="col-12 text-center bg-success mt-3">
+    <div class="col-12 text-center bg-success mt-3 rounded">
         Total : {{totalUsers}} € 
     </div>
-    <div class="col-12 text-center bg-success mt-3">
+    <div class="col-12 text-center bg-success mt-3 rounded">
         {{moneyDue | uppercase}}
     </div>
-    <div class="col-12 text-center bg-success mt-3">
+    <div class="col-12 text-center bg-success mt-3 rounded">
         {{moneyBack | uppercase}}
     </div>
 </div>

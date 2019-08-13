@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { ItemsService } from '../service/items.service';
 import { Item } from '../models/Item.model';
 
+
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
@@ -60,6 +61,7 @@ export class AccueilComponent implements OnInit {
     this.userService.owMoney();
     this.moneyDue=this.userService.retour;
     this.moneyBack=this.userService.giveBack;
+
   }
   
   ngOnDestroy(){
